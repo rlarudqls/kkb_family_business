@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Benefit</title>
+</head>
+<body>
+    <h2>Benefit Details</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+        <tr> 
+            <td th:text="${benefit.id}"></td>
+            <td th:text="${benefit.name}"></td>
+            <td th:text="${benefit.description}"></td>
+            <td th:text="${benefit.amount}"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -18,19 +18,6 @@ public class CommunityController {
         this.postService = postService;
     }
 
-    @GetMapping("/list")
-    public String listPosts(Model model) {
-        List<Post> posts = postService.getAllPosts();
-        model.addAttribute("posts", posts);
-        return "community/list";
-    }
+    // Controller methods (getters and setters) here...
 
-    @GetMapping("/{id}")
-    public String viewPost(@PathVariable Long id, Model model) {
-        Post post = postService.getPostById(id);
-        model.addAttribute("post", post);
-        return "community/view";
-    }
-
-    // TODO: Implement create, edit, and delete methods for posts and comments
 }

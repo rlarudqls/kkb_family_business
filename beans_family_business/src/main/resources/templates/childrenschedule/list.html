@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Benefits List</title>
+</head>
+<body>
+    <h2>Benefits List</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+        <!-- Loop through all benefits and display them in a table -->
+        <tr th:each="benefit : ${benefits}">
+            <td th:text="${benefit.id}"></td>
+            <td th:text="${benefit.name}"></td>
+            <td th:text="${benefit.description}"></td>
+            <td th:text="${benefit.amount}"></td>
+            <td>
+                <!-- Links to view and edit benefit details -->
+                <a th:href="@{/benefits/{id}/view(id=${benefit.id})}">View</a>
+                <a th:href="@{/benefits/{id}/edit(id=${benefit.id})}">Edit</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

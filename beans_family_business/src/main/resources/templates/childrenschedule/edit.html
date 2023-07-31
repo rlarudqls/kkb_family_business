@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Benefit</title>
+</head>
+<body>
+    <h2>Edit Benefit</h2>
+    <!-- Edit Benefit Form -->
+    <form th:action="@{/benefits/{id}(id=${benefit.id})}" method="post">
+        <!-- Form fields for editing the benefit -->
+        <input type="hidden" th:field="*{id}">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" required><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" th:field="*{description}" required></textarea><br>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" th:field="*{amount}" required><br>
+
+        <!-- Submit button -->
+        <input type="submit" value="Save Changes">
+    </form>
+</body>
+</html>
+// 혜택 정보를 수정
